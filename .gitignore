@@ -1,0 +1,21 @@
+.env
+coverage
+coverage.json
+lcov.info
+lcov*.info
+typechain
+results.sarif
+
+# Typescript
+*.tsbuildinfo
+
+# yarn v1, node
+node_modules
+
+# Foundry files
+forge-artifacts
+out
+broadcast/
+
+# VS Code
+.vscode

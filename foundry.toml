@@ -1,0 +1,11 @@
+[profile.default]
+src = 'src'
+out = 'out'
+libs = ['lib']
+fs_permissions = [
+    { access = "read", path = "./out/" },
+    { access = "read", path = "./broadcast/" },
+]
+
+[rpc_endpoints]
+anvil = "${LOCAL_RPC_URL}"

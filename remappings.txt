@@ -1,0 +1,5 @@
+base64-sol/=lib/base64/
+@openzeppelin/=lib/ozv4/
+src/=./src/
+test/=./test/
+script/=./script/

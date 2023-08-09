@@ -1,0 +1,31 @@
+{
+  "name": "@gemstation/contracts",
+  "version": "1.0.0",
+  "description": "Standardized Diamond Standard contracts. Used by gemforge CLI.",
+  "files": [
+    "contracts",
+    "README.md",
+    "package.json",
+    "package-lock.json",
+    "CHANGELOG.md",
+    "LICENSE.md"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "devnet": "anvil --chain-id 1337",
+    "clean": "forge clean",
+    "build": "forge build --names --sizes",
+    "test": "forge test",
+    "test-cov": "forge coverage -vvv"
+  },
+  "devDependencies": {
+    "eslint": "8.27.0",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.8",
+    "dotenv": "^16.0.1",
+    "solc": "^0.8.16",
+    "solhint": "^3.3.7",
+    "solidity-coverage": "^0.7.21",
+    "solidity-docgen": "^0.5.17"
+  }
+}
