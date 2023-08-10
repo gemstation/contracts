@@ -6,12 +6,16 @@ import "../shared/Structs.sol";
 struct AppStorage {
     bool diamondInitialized;
     uint256 reentrancyStatus;
-    ERC2711ContextStorage erc2771Context;
-    ERC20Tokens erc20s;
+    MetaTxContextStorage metaTxContext;
 
-    ///
-    /// TODO: Add additional storage variables here
-    ///
+    /*
+    TODO: Customize storage variables here
+
+    NOTE: Once contracts have been deployed you cannot modify the existing entries here. You can only append 
+    new entries. Otherwise, any subsequent upgrades you perform will break the memory structure of your 
+    deployed contracts.
+    */
+    ERC20Tokens erc20s;
 }
 
 library LibAppStorage {

@@ -3,14 +3,14 @@ pragma solidity >=0.8.21;
 
 import { ERC20 } from "../share/Structs.sol";
 import { AppStorage, LibAppStorage } from "./LibAppStorage.sol";
-import "../shared/Errors.sol";
+
+error ERC20InvalidInput();
+error ERC20InvalidToken(address token);
+error ERC20InvalidSender(address sender);
+error ERC20InvalidReceiver(address receiver);
+error ERC20NotEnoughBalance(address sender);
 
 library LibERC20 {
-  error ERC20InvalidToken(address token);
-  error ERC20InvalidSender(address sender);
-  error ERC20InvalidReceiver(address receiver);
-  error ERC20NotEnoughBalance(address sender);
-
   event ERC20NewToken(address token);
   event ERC20Minted(address token, address to, uint256 amount);
   event ERC20Transferred(address token, address indexed from, address indexed to, uint256 value);
@@ -20,7 +20,7 @@ library LibERC20 {
    */
   function create(string name, string symbol, uint8 decimals) internal returns (address) {
     if (name == "" || symbol == "") {
-      revert InvalidInput(token);
+      revert ERC20InvalidInput();
     }
 
     address token = address(new ERC20(address(this)));

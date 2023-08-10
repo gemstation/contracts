@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Standardized Diamond Standard contracts. Used by gemforge CLI.",
   "files": [
-    "contracts",
+    "src",
     "README.md",
     "package.json",
     "package-lock.json",
@@ -19,11 +19,11 @@
     "test-cov": "forge coverage -vvv"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "eslint": "8.27.0",
     "husky": "^8.0.2",
     "prettier": "^2.8.8",
-    "dotenv": "^16.0.1",
-    "solc": "^0.8.16",
+    "solc": "^0.8.21",
     "solhint": "^3.3.7",
     "solidity-coverage": "^0.7.21",
     "solidity-docgen": "^0.5.17"
