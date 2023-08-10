@@ -1,7 +1,7 @@
 {
   "name": "@gemstation/contracts",
   "version": "1.0.0",
-  "description": "Standardized Diamond Standard contracts. Used by gemforge CLI.",
+  "description": "Standardized Diamond Standard contracts. Used by gemforge.",
   "files": [
     "src",
     "README.md",

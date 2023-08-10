@@ -1,6 +1,6 @@
 # @gemstation/contracts
 
-Standardized Diamond Standard contracts. Used by [gemforge](https://github.com/gemstation/gemforge) CLI.
+Standardized Diamond Standard contracts. Used by [gemforge](https://github.com/gemstation/gemforge).
 
 ## Development
 

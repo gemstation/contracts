@@ -13,12 +13,8 @@ error ERC20InvalidInput();
 error ERC20InvalidSender(address sender);
 error ERC20InvalidReceiver(address receiver);
 error ERC20NotEnoughAllowance(address owner, address spender);
-error ERC20NotEnoughBalance(address sender);
 
-contract ERC20Facet is IERC20Facet, AccessControl {
-  event ERC20NewToken(address token);
-  event ERC20Approval(address token, address owner, address spender, uint256 value);
-  
+contract ERC20Facet is IERC20Facet, AccessControl {  
   /*
     IERC20Facet interface implementation
   */
@@ -84,10 +80,6 @@ contract ERC20Facet is IERC20Facet, AccessControl {
       }
 
       t.allowances[from][caller] -= amount;
-    }
-
-    if (amount > t.balances[from]) {
-      revert ERC20NotEnoughBalance(from);
     }
 
     LibERC20.transfer(token, from, to, amount);
