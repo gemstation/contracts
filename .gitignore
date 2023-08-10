@@ -13,6 +13,7 @@ results.sarif
 node_modules
 
 # Foundry files
+cache/
 forge-artifacts
 out
 broadcast/

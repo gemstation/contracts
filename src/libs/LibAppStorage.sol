@@ -15,7 +15,7 @@ struct AppStorage {
     new entries. Otherwise, any subsequent upgrades you perform will break the memory structure of your 
     deployed contracts.
     */
-    ERC20Tokens erc20s;
+    mapping(address => ERC20Token) erc20s;
 }
 
 library LibAppStorage {
