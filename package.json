@@ -12,6 +12,8 @@
   ],
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install && npx husky add .husky/commit-msg 'npx commitlint --edit $1'",
+    "prettify": "prettier --write .",
     "devnet": "anvil --chain-id 1337",
     "clean": "forge clean",
     "build": "forge build --names --sizes",
@@ -19,13 +21,24 @@
     "test-cov": "forge coverage -vvv"
   },
   "devDependencies": {
-    "dotenv": "^16.0.1",
-    "eslint": "8.27.0",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@types/node": "^18.16.16",
     "husky": "^8.0.2",
+    "dotenv": "^16.0.1",
     "prettier": "^2.8.8",
     "solc": "^0.8.21",
     "solhint": "^3.3.7",
     "solidity-coverage": "^0.7.21",
     "solidity-docgen": "^0.5.17"
-  }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "engineStrict": true
 }
