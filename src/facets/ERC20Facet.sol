@@ -15,6 +15,15 @@ error ERC20InvalidReceiver(address receiver);
 error ERC20NotEnoughAllowance(address owner, address spender);
 
 contract ERC20Facet is IERC20Facet, AccessControl {  
+  /**
+   * @dev Emitted when a new token is deployed.
+   */
+  event ERC20NewToken(address token);
+  /**
+   * @dev Emitted when a token is approved for a spender.
+   */
+  event ERC20Approval(address token, address owner, address spender, uint256 value);
+
   /*
     IERC20Facet interface implementation
   */

@@ -11,6 +11,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^17.2.0
     version: 17.2.0
+  '@openzeppelin/contracts':
+    specifier: ^4.9.3
+    version: 4.9.3
   '@types/node':
     specifier: ^18.16.16
     version: 18.16.16
@@ -582,6 +585,10 @@ packages:
       - '@swc/wasm'
       - '@types/node'
       - typescript
+    dev: true
+
+  /@openzeppelin/contracts@4.9.3:
+    resolution: {integrity: sha512-He3LieZ1pP2TNt5JbkPA4PNT9WC3gOTOlDcFGJW4Le4QKqwmiNJCRt44APfxMxvq7OugU/cqYuPcSBzOw38DAg==}
     dev: true
 
   /@sindresorhus/is@0.14.0:

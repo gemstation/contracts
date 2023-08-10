@@ -7,15 +7,6 @@ pragma solidity >=0.8.21;
  */
 interface IERC20Facet {
   /**
-   * @dev Emitted when a new token is deployed.
-   */
-  event ERC20NewToken(address token);
-  /**
-   * @dev Emitted when a token is approved for a spender.
-   */
-  event ERC20Approval(address token, address owner, address spender, uint256 value);
-
-  /**
    * @dev Deploy new token.
    * 
    * @param name The name of the token.

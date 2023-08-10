@@ -1,1 +1,1 @@
-lib/=./lib/
+@openzeppelin=./node_modules/@openzeppelin
