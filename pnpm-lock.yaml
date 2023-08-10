@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  gemforge:
+    specifier: link:/Users/ram/dev/gemstation/gemforge
+    version: link:../gemforge
+
 devDependencies:
   '@commitlint/cli':
     specifier: ^17.2.0
