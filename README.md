@@ -16,7 +16,7 @@ This contains the optimal folder structure for use with `gemforge`, including:
 
 ## Installation
 
-In a fresh folder:
+In an empty folder:
 
 ```
 npx gemforge scaffold
@@ -73,12 +73,6 @@ $ pnpm build -v
 $ pnpm dep -v
 ```
 
-## Gemforge
-
-The `build` and `deploy` commands internally call through to `gemforge`. The `gemforge.config.cjs` file contains all the configuration - please customize as you see fit.
-
-For full gemforge documentation please see [gemforge.xyz](https://gemforge.xyz).
-
-## License
+## License
 
 MIT - see [LICSENSE.md](LICENSE.md)
