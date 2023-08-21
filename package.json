@@ -16,8 +16,8 @@
     "prettify": "prettier --write .",
     "devnet": "anvil --chain-id 1337",
     "clean": "forge clean",
-    "test": "forge test -vvv",
-    "test-cov": "forge coverage -vvv",
+    "test": "forge test -vv",
+    "test-cov": "forge coverage -vv",
     "build": "gemforge build",
     "deploy": "gemforge deploy"
   },

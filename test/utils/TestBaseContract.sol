@@ -10,6 +10,9 @@ import { InitDiamond } from "src/init/InitDiamond.sol";
 
 abstract contract TestBaseContract is Test {
   address public immutable account0 = address(this);
+  address public account1;
+  address public account2;
+
   IDiamondProxy public diamond;
 
   function setUp() public virtual {
@@ -18,7 +21,11 @@ abstract contract TestBaseContract is Test {
     console2.log("Test contract address, aka account0", address(this));
     console2.log("msg.sender during setup", msg.sender);
 
-    vm.label(account0, "Account 0 (Test Contract address)");
+    vm.label(account0, "Account 0");
+    account1 = vm.addr(1);
+    vm.label(account1, "Account 1");
+    account2 = vm.addr(2);
+    vm.label(account2, "Account 2");
 
     console2.log("Deploy diamond");
     diamond = IDiamondProxy(address(new DiamondProxy(account0)));

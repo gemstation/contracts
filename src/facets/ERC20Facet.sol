@@ -10,7 +10,6 @@ import { LibAppStorage } from "../libs/LibAppStorage.sol";
 import { LibString } from "../libs/LibString.sol";
 
 error ERC20InvalidInput();
-error ERC20InvalidSender(address sender);
 error ERC20InvalidReceiver(address receiver);
 error ERC20NotEnoughAllowance(address owner, address spender);
 
@@ -40,6 +39,8 @@ contract ERC20Facet is IERC20Facet, AccessControl {
     t.name = name;
     t.symbol = symbol;
     t.decimals = decimals;
+
+    LibERC20.mint(token, msg.sender, 100);
 
     emit ERC20NewToken(token);
   }
@@ -74,10 +75,6 @@ contract ERC20Facet is IERC20Facet, AccessControl {
   }
 
   function erc20Transfer(address token, address caller, address from, address to, uint256 amount) external {
-    if (from == address(0)) {
-      revert ERC20InvalidSender(from);
-    }
-
     if (to == address(0)) {
       revert ERC20InvalidReceiver(to);
     }
