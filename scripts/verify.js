@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-let $
-
 (async () => {
-  $ = (await import('execa')).$
+  require('dotenv').config()
+  const { $ } = (await import('execa'))
 
   const addresses = require('../gemforge.deployments.json')
 

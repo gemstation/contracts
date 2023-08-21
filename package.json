@@ -16,15 +16,16 @@
     "prettify": "prettier --write .",
     "devnet": "anvil --chain-id 1337",
     "clean": "forge clean",
-    "build": "forge build --names --sizes",
     "test": "forge test",
-    "test-cov": "forge coverage -vvv"
+    "test-cov": "forge coverage -vvv",
+    "build": "gemforge build",
+    "deploy": "gemforge deploy"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@types/node": "^18.16.16",
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.3.1",
     "execa": "^8.0.1",
     "husky": "^8.0.2",
     "prettier": "^2.8.8",

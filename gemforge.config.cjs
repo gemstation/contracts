@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   solc: {
     // SPDX License - to be inserted in all generated .sol files
@@ -8,7 +9,7 @@ module.exports = {
   // commands to execute
   commands: {
     // the build command
-    build: 'forge build',
+    build: 'forge build --names --sizes',
   },
   paths: {
     // contract built artifacts folder

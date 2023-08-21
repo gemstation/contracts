@@ -20,7 +20,7 @@ devDependencies:
     specifier: ^18.16.16
     version: 18.16.16
   dotenv:
-    specifier: ^16.0.1
+    specifier: ^16.3.1
     version: 16.3.1
   execa:
     specifier: ^8.0.1
