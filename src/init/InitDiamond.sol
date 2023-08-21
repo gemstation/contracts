@@ -8,7 +8,7 @@ error DiamondAlreadyInitialized();
 contract InitDiamond {
   event InitializeDiamond(address sender);
 
-  function initialize() external {
+  function init() external {
     AppStorage storage s = LibAppStorage.diamondStorage();
     if (s.diamondInitialized) {
       revert DiamondAlreadyInitialized();
