@@ -7,5 +7,3 @@ fs_permissions = [
     { access = "read", path = "./broadcast/" },
 ]
 
-[rpc_endpoints]
-anvil = "${LOCAL_RPC_URL}"

@@ -16,13 +16,13 @@ This contains the optimal folder structure for use with `gemforge`, including:
 
 ## Installation
 
-Git clone:
+In a fresh folder:
 
 ```
-$ git clone https://github.com/gemstation/contracts-foundry.git
+npx gemforge scaffold
 ```
 
-Setup the folder:
+Change into the folder and run in order:
 
 ```
 $ foundryup
@@ -34,12 +34,11 @@ $ git submodule update --init --recursive
 Create `.env` and set the following within:
 
 ```
-export LOCAL_RPC_URL=http://localhost:8545
-export SEPOLIA_RPC_URL=<your infura/alchemy endpoint for spolia>
-export ETHERSCAN_API_KEY=<your etherscan api key>
-export MNEMONIC=<your deployment wallet mnemonic>
+LOCAL_RPC_URL=http://localhost:8545
+SEPOLIA_RPC_URL=<your infura/alchemy endpoint for spolia>
+ETHERSCAN_API_KEY=<your etherscan api key>
+MNEMONIC=<your deployment wallet mnemonic>
 ```
-
 
 ## Usage
 
@@ -58,20 +57,20 @@ $ pnpm build
 To deploy to the local node:
 
 ```
-$ pnpm deploy
+$ pnpm deploy-contracts
 ```
 
 To deploy to Sepolia testnet:
 
 ```
-$ pnpm deploy sepolia
+$ pnpm dep sepolia
 ```
 
 For verbose output simply add `-v`:
 
 ```
 $ pnpm build -v
-$ pnpm deploy -v
+$ pnpm dep -v
 ```
 
 ## Gemforge

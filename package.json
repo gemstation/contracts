@@ -19,7 +19,7 @@
     "test": "forge test -vv",
     "test-cov": "forge coverage -vv",
     "build": "gemforge build",
-    "deploy": "gemforge deploy"
+    "dep": "gemforge deploy"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
