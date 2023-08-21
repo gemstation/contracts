@@ -32,7 +32,8 @@
     "solc": "^0.8.21",
     "solhint": "^3.3.7",
     "solidity-coverage": "^0.7.21",
-    "solidity-docgen": "^0.5.17"
+    "solidity-docgen": "^0.5.17",
+    "gemforge": "^1.0.0"
   },
   "commitlint": {
     "extends": [
@@ -42,8 +43,5 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "engineStrict": true,
-  "dependencies": {
-    "gemforge": "link:/Users/ram/dev/gemstation/gemforge"
-  }
+  "engineStrict": true
 }
