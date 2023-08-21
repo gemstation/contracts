@@ -1,12 +1,13 @@
 # @gemstation/contracts-foundry
 
-Scaffolding for [gemforge](https://gemforge.xyz) using [Foundry](https://github.com/foundry-rs/foundry).
+Example smart contracts repo for [gemforge](https://gemforge.xyz) using [Foundry](https://github.com/foundry-rs/foundry).
 
-This contains the optimal folder structure for use with `gemforge`, including:
+This contains the optimal folder structure for use with `gemforge`:
 
-* Diamond standard library contracts imported as a git module
+* Build and deploy commands already setup
+* Pre-configured config file
 * Post-deploy hook for Etherscan verification
-* ERC20 facade as an example
+* ERC20 token facade with tests
 
 ## Requirements
 
