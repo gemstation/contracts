@@ -1,15 +1,7 @@
 {
-  "name": "@gemstation/contracts",
+  "name": "@gemstation/contracts-foundry",
   "version": "1.0.0",
-  "description": "Standardized Diamond Standard contracts. Used by gemforge.",
-  "files": [
-    "src",
-    "README.md",
-    "package.json",
-    "package-lock.json",
-    "CHANGELOG.md",
-    "LICENSE.md"
-  ],
+  "description": "Gemforge diamond standard contracts scaffolding using Foundry.",
   "license": "MIT",
   "scripts": {
     "prepare": "husky install && npx husky add .husky/commit-msg 'npx commitlint --edit $1'",
