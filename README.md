@@ -1,8 +1,8 @@
 # @gemstation/contracts-foundry
 
-Example smart contracts repo for [gemforge](https://gemforge.xyz) using [Foundry](https://github.com/foundry-rs/foundry).
+Example smart contracts repo for [Gemforge](https://gemforge.xyz) using [Foundry](https://github.com/foundry-rs/foundry).
 
-This contains the optimal folder structure for use with `gemforge`:
+This contains the optimal folder structure for use with Gemforge:
 
 * Build and deploy commands already setup
 * Pre-configured config file
