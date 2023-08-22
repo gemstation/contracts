@@ -95,7 +95,7 @@ module.exports = {
       // Wallet to use for deployment
       wallet: 'wallet1',
     },
-    // Local network
+    // Sepolia network
     sepolia: {
       // RPC endpoint URL
       rpcUrl: () => process.env.SEPOLIA_RPC_URL,

@@ -58,7 +58,7 @@ $ pnpm build
 To deploy to the local node:
 
 ```
-$ pnpm deploy-contracts
+$ pnpm dep
 ```
 
 To deploy to Sepolia testnet:
