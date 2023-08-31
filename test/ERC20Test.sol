@@ -13,20 +13,28 @@ contract ERC20Test is TestBaseContract {
     super.setUp();
   }
 
+  function tokenConfig(string memory name, string memory symbol, uint8 decimals) internal pure returns (ERC20TokenConfig memory) {
+    return ERC20TokenConfig({
+      name: name,
+      symbol: symbol,
+      decimals: decimals
+    });
+  }
+
   function testDeployFacadeFails() public {
     vm.expectRevert( abi.encodePacked(ERC20InvalidInput.selector) );
-    diamond.erc20DeployToken("", "TEST", 18);
+    diamond.erc20DeployToken(tokenConfig("", "TEST", 18));
 
     vm.expectRevert( abi.encodePacked(ERC20InvalidInput.selector) );
-    diamond.erc20DeployToken("TestToken", "", 18);
+    diamond.erc20DeployToken(tokenConfig("TestToken", "", 18));
 
     vm.expectRevert( abi.encodePacked(ERC20InvalidInput.selector) );
-    diamond.erc20DeployToken("TestToken", "TEST", 0);
+    diamond.erc20DeployToken(tokenConfig("TestToken", "TEST", 0));
   }
 
   function testDeployFacadeSucceeds() public returns (ERC20) {
     vm.recordLogs();
-    diamond.erc20DeployToken("TestToken", "TEST", 18);
+    diamond.erc20DeployToken(tokenConfig("TestToken", "TEST", 18));
     Vm.Log[] memory entries = vm.getRecordedLogs();
     assertEq(entries.length, 2, "Invalid entry count");
     assertEq(entries[1].topics.length, 1, "Invalid event count");
