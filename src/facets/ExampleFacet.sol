@@ -3,7 +3,7 @@ pragma solidity >=0.8.21;
 
 
 /**
- * This is a more simple facet example which exports a single function.
+ * This is a simple facet example which exports a single function.
  */
 contract ExampleFacet {
   function exampleFunction() external pure returns (string memory) {

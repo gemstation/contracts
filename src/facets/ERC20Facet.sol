@@ -15,7 +15,7 @@ error ERC20NotEnoughAllowance(address owner, address spender);
 
 
 /**
- * This is a more complicated example facet that shows how to use the ERC20 facade to launch multiple ERC20 tokens backed by a single diamond proxy.
+ * This is a complex example facet that shows how to use the ERC20 facade to launch multiple ERC20 tokens backed by a single diamond proxy.
  */
 contract ERC20Facet is IERC20Facet, AccessControl {  
   /**

@@ -55,6 +55,12 @@ To build the code:
 $ pnpm build
 ```
 
+To run the tests:
+
+```
+$ pnpm build
+```
+
 To deploy to the local node:
 
 ```
