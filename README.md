@@ -66,16 +66,16 @@ To run the tests:
 $ pnpm build
 ```
 
-To deploy to the local node:
+To deploy to the local target:
 
 ```
-$ pnpm dep
+$ pnpm dep local
 ```
 
-To deploy to Sepolia testnet:
+To deploy to the testnet target (sepolia):
 
 ```
-$ pnpm dep sepolia
+$ pnpm dep testnet
 ```
 
 For verbose output simply add `-v`:

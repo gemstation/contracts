@@ -3,33 +3,33 @@
   require('dotenv').config()
   const { $ } = (await import('execa'))
 
-  const addresses = require('../gemforge.deployments.json')
+  const deploymentInfo = require('../gemforge.deployments.json')
 
-  const chainId = process.env.GEMFORGE_DEPLOY_CHAIN_ID
-  if (!chainId) {
-    throw new Error('GEMFORGE_DEPLOY_CHAIN_ID env var not set')
+  const target = process.env.GEMFORGE_DEPLOY_TARGET
+  if (!target) {
+    throw new Error('GEMFORGE_DEPLOY_TARGET env var not set')
   }
 
   // skip localhost
-  if (chainId === '31337') {
-    console.log('Skipping verification on localhost')
+  if (target === 'local') {
+    console.log('Skipping verification on local')
     return
   }
 
-  console.log(`Verifying on chain ${chainId} ...`)
+  console.log(`Verifying for target ${target} ...`)
 
-  const contracts = addresses[chainId] || []
+  const contracts = (deploymentInfo[target] || {}).contracts || []
 
-  for (let { name, contract } of contracts) {
+  for (let { name, onChain } of contracts) {
     let args = '0x'
 
-    if (contract.constructorArgs.length) {
-      args = (await $`cast abi-encode constructor(address) ${contract.constructorArgs.join(' ')}`).stdout
+    if (onChain.constructorArgs.length) {
+      args = (await $`cast abi-encode constructor(address) ${onChain.constructorArgs.join(' ')}`).stdout
     }
 
-    console.log(`Verifying ${name} at ${contract.address} with args ${args}`)
+    console.log(`Verifying ${name} at ${onChain.address} with args ${args}`)
 
-    await $`forge verify-contract ${contract.address} ${name} --constructor-args ${args} --chain-id ${chainId} --verifier etherscan --etherscan-api-key ${process.env.ETHERSCAN_API_KEY} --watch`
+    await $`forge verify-contract ${onChain.address} ${name} --constructor-args ${args} --chain-id ${deploymentInfo[target].chainId} --verifier etherscan --etherscan-api-key ${process.env.ETHERSCAN_API_KEY} --watch`
 
     console.log(`Verified!`)
   }
