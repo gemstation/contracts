@@ -31,7 +31,7 @@ abstract contract TestBaseContract is Test {
     diamond = IDiamondProxy(address(new DiamondProxy(account0)));
 
     console2.log("Cut and init");
-    IDiamondCut.FacetCut[] memory cut = LibDiamondHelper.deployFacetsAndGetCuts();
+    IDiamondCut.FacetCut[] memory cut = LibDiamondHelper.deployFacetsAndGetCuts(address(diamond));
     InitDiamond init = new InitDiamond();
     diamond.diamondCut(cut, address(init), abi.encodeWithSelector(init.init.selector));
   }
