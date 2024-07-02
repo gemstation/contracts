@@ -32,8 +32,7 @@ npx gemforge scaffold
 Change into the folder and run in order:
 
 ```
-$ foundryup
-$ forge install foundry-rs/forge-std
+$ foundryup  # On OS X you may first need to run: brew install libusb
 $ pnpm i
 $ git submodule update --init --recursive
 ```
