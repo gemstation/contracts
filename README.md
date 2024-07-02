@@ -63,7 +63,7 @@ $ pnpm build
 To run the tests:
 
 ```
-$ pnpm build
+$ pnpm test
 ```
 
 To deploy to the local target:
