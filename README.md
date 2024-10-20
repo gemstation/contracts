@@ -6,7 +6,6 @@ This contains the optimal folder structure for use with Gemforge:
 
 * Build and deploy commands already setup
 * Pre-configured config file
-* Post-deploy hook for Etherscan verification
 
 There are two facets provided:
 
@@ -25,66 +24,77 @@ _Note: A Hardhat equivalent of this repo is available at https://github.com/gems
 
 In an empty folder:
 
-```
+```shell
 npx gemforge scaffold
 ```
 
 Change into the folder and run in order:
 
-```
+```shell
 $ foundryup  # On OS X you may first need to run: brew install libusb
 $ pnpm i
 $ git submodule update --init --recursive
 ```
 
-Create `.env` and set the following within:
-
-```
-LOCAL_RPC_URL=http://localhost:8545
-SEPOLIA_RPC_URL=<your infura/alchemy endpoint for spolia>
-ETHERSCAN_API_KEY=<your etherscan api key>
-MNEMONIC=<your deployment wallet mnemonic>
-```
-
 ## Usage
 
-Run a local dev node in a separate terminal:
+Run a local dev node [anvil](https://book.getfoundry.sh/anvil/) in a separate terminal:
 
-```
+```shell
 pnpm devnet
 ```
 
 To build the code:
 
-```
+```shell
 $ pnpm build
 ```
 
 To run the tests:
 
-```
+```shell
 $ pnpm test
 ```
 
-To deploy to the local target:
+### Deploy to local devnet
 
-```
+To deploy to the `local` target:
+
+```shell
 $ pnpm dep local
 ```
 
-To deploy to the testnet target (sepolia):
+### Deploy to testnet (Base Sepolia)
 
-```
-$ pnpm dep testnet
+You first need to configure the deployment wallet private key in your environment. Ensure that this wallet has a non-zero balance of Base Sepolia ETH (you can use [Alchemy's faucet](https://www.alchemy.com/faucets/base-sepolia) to get some):
+
+```shell
+$ export PRIVATE_KEY=<your Base Sepolia deployment wallet private key>
 ```
 
-For verbose output simply add `-v`:
+Now register on https://basescan.org and generate an API key to set in the environment. This will be used for contract source verification on basescan:
 
+```shell
+$ export BASESCAN_API_KEY=<api key obtained from basescan.org>
 ```
+
+Now run:
+
+```shell
+$ pnpm dep base_sepolia
+```
+
+If you visit https://sepolia.basescan.org you should see the deployed contracts along with verified source code.
+
+### Miscellanous
+
+For verbose output simply add `-v` to the commands:
+
+```shell
 $ pnpm build -v
 $ pnpm dep -v
 ```
 
 ## License
 
-MIT - see [LICSENSE.md](LICENSE.md)
+MIT - see [LICENSE.md](LICENSE.md)
